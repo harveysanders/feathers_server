@@ -1,6 +1,7 @@
 'use strict';
 
 const { authenticate } = require('feathers-authentication').hooks;
+const { hashPassword } = require('feathers-authentication-local').hooks;
 const commonHooks = require('feathers-hooks-common');
 const { restrictToOwner } = require('feathers-authentication-hooks');
 
@@ -17,8 +18,8 @@ module.exports = {
   before: {
     all: [],
     find: [ authenticate('jwt') ],
-    get: [ ...restrict ],
-    create: [  ],
+    get: [ authenticate('jwt') ],
+    create: [ hashPassword() ],
     update: [ ...restrict ],
     patch: [ ...restrict ],
     remove: [ ...restrict ]
