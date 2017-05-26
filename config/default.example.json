@@ -1,0 +1,28 @@
+{
+  "host": "localhost",
+  "port": 5030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "d5f59de9c84d3b49d81626a4272dbe0c841381d8d60fd1c8cf7ad6f70ac9eeea0cab27923ef83000085d1081f382a71563a199f5e02d79a96fc635b9ecf2304b024f0e891474fc5f8705880cdd2f050c9967ee2005e87c782fa5259832b48a53bf27a605540948a1301076791c5aec5c0f55117750768bf4df1cf412f32cbddfb19f71f8798aed8950a3a62f83e83d4da2b1a92941a3477e354c947ee694f02e2e4096280eaa2245c37dde15370dbdf640881a5b2b787b552032dc4c20ce10c9f192413e859667f8c0596e4c45176802ea525cb12d56fb2b03d4d6a1cb9f9231278e6169fcbebbda1d73e6a7c98894382580b0563cabc6ff1ab2b7085c5ce1e0",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  },
+  "postgres": "postgres://postgres:@localhost:5432/welcome_mat"
+}
