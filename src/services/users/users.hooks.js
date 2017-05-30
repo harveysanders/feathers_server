@@ -19,7 +19,9 @@ module.exports = {
     all: [],
     find: [ authenticate('jwt') ],
     get: [ authenticate('jwt') ],
-    create: [ hashPassword() ],
+    // 'password' is the default passwordField, but is passed in here anyway for reference
+    // https://docs.feathersjs.com/api/authentication/local.html#default-options
+    create: [ hashPassword({ passwordField: 'password' }) ],
     update: [ ...restrict ],
     patch: [ ...restrict ],
     remove: [ ...restrict ]
