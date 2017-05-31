@@ -1,4 +1,5 @@
 {
   "host": "welcomeMatServer-app.feathersjs.com",
-  "port": "PORT"
+  "port": "PORT",
+  "postgres": "POSTGRES_URL"
 }
