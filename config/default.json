@@ -1,0 +1,29 @@
+{
+  "host": "localhost",
+  "port": 5030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "JWT_SECRET",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "welcome_mat",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  },
+  "postgres": "postgres://postgres:@localhost:5432/welcome_mat"
+}
